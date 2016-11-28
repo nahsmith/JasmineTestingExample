@@ -1,0 +1,25 @@
+!!! 5
+%html
+  %head
+    %title Rotten Potatoes!
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    %h1.title Rotten Potatoes!
+    #main
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+      - if @current_user
+        %p.welcome! You are logged in via #{@current_user.provider} as #{@current_user.name}
+        = link_to 'sign Out', signout_path
+        %p.profile= link_to 'View Profile', user_path(@current_user)
+      - else  
+        %p.login= link_to 'Sign in with twitter', "/auth/twitter"
+        %p.login= link_to 'Sign in with github', "/auth/github"
+      = yield
+
+

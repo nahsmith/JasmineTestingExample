@@ -1,0 +1,9 @@
+#*
+\#*\#
+*~
+TAGS
+db/schema.rb
+log/
+db/*.sqlite3
+config/initializers/omniauth.rb
+tmp/cache/assets/*

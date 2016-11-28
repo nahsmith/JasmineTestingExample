@@ -1,0 +1,20 @@
+THE JASMINE TESTS IN THIS EXAMPLE DO NOT WORK PROPERLY.  In particular,
+the mocks (spyOn) for ajax calls do not work as expected.  This may be an
+issue with newer versions of Jasmine (2.0).
+
+The Jasmine spec contains several changes from the one in the text
+due to changes in Jasmine syntax and deprecation of old features.
+
+If you are able to get this example working, please let me know.
+One possible option is to use the jasmine-ajax gem to stub out ajax calls rather
+than spyOn.  I haven't had a chance to try this but it looks like a
+promising option.
+
+Note:  This repo does not include the:
+config/initializers/omniauth.rb
+file that contains the client key and client secret for twitter and github.
+
+Before running this example, you will need to authorize the app for twitter
+and github sign-in and create the omniauth.rb file containing the keys and
+secrets obtained during the authorization process.  See the lecture slides for
+the format of this file.

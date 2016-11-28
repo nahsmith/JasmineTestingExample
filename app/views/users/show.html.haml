@@ -1,0 +1,10 @@
+-# in app/views/users/show.html.haml
+
+%h2 Profile for #{@user.name}
+
+%ul#details
+  %li
+    name:
+    = @user.name
+
+= link_to 'Back to movie list', movies_path
