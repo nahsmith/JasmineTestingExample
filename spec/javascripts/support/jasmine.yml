@@ -8,7 +8,6 @@ src_dir: "app/assets/javascripts"
 # defaults to []
 # include_dir:
 #   - ../mobile_app/public/js
-
 # path to parent directory of css_files
 # relative path from Rails.root
 # defaults to app/assets/stylesheets

@@ -1,14 +1,19 @@
-THE JASMINE TESTS IN THIS EXAMPLE DO NOT WORK PROPERLY.  In particular,
-the mocks (spyOn) for ajax calls do not work as expected.  This may be an
-issue with newer versions of Jasmine (2.0).
+This example illustrates client-side unit testing using Jasmine.  It also 
+demonstrates some of the issues with testing client-side javaScript.  In
+particular, it shows the problem of adding fixture elements to the DOM
+for tests after the initial page load has been completed.  In this very
+common case, jQuery "setup" functions, run at the completion of page load,
+will run before the fixture elements are added to the DOM. In this case, the
+click handler attached to the a-elements of the movies table by the setup
+function will not be attached to the fixture a-element added to the DOM in the
+test of the AJAX call functonality.  The example shows a very kludgy work-around
+for this problem.
 
-The Jasmine spec contains several changes from the one in the text
-due to changes in Jasmine syntax and deprecation of old features.
+The example also loads the fixtures in a rather kludgy way by specifying the
+html in-line in the test.  This is not the best way to do it, but I have been
+unable to get loadFixtures() to work properly--probably a path issue.  If you
+figure out how get loadFixtures() to work, please let me know.
 
-If you are able to get this example working, please let me know.
-One possible option is to use the jasmine-ajax gem to stub out ajax calls rather
-than spyOn.  I haven't had a chance to try this but it looks like a
-promising option.
 
 Note:  This repo does not include the:
 config/initializers/omniauth.rb
